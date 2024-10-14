@@ -1,0 +1,82 @@
+create database hospital;
+show databases;
+use hospital;
+
+create table medico(
+codMed int primary key,
+nomeMed varchar(40) not null,
+dataNasc date not null,
+cpf char(11),
+cidade varchar(30) not null,
+especialidade varchar(30) not null
+);
+
+create table paciente(
+codPac int primary key,
+nomePac varchar(40) not null,
+dataNasc date not null,
+cpf char(11),
+cidade varchar(30) not null
+);
+
+create table consulta(
+codMed int not null,
+codPac int not null,
+dataConsulta date not null,
+hora time not null,
+primary key(codMed, codPac),
+foreign key(codMed) references medico(codMed),
+foreign key(codPac) references paciente(codPac)
+);
+
+
+
+
+
+
+use hospital;
+show databases;
+
+insert into medico
+values(1, 'João', '1984/06/28', '10000100000', 'Florianópolis', 'Ortopedia');
+
+insert into medico
+values(2, 'Maria', '1970/07/13', '11100100000', 'Blumenau', 'Traumatologia');
+
+insert into medico
+values(3, 'Pedro', '1956/11/25', '10001101000', 'Porto Velho', 'Pediatria');
+
+insert into medico
+values(4, 'Carlos', '1985/02/07', '11110100000', 'Joinville', 'Ortopedia');
+
+insert into medico
+values(5, 'Marcia', '1945/08/15', '10110100000', 'Fortaleza', 'Neurologia');
+
+insert into medico
+values(6, 'Luciana', '1975/04/25', '01001011111', 'Rio Branco', 'Odontologia');
+
+describe medico;
+select * from medico;
+
+
+
+insert into paciente
+values(1, 'Andrea', '1978/09/02', '00653955899', 'Foz do Iguaçu');
+
+insert into paciente
+values(2, 'Lucas', '2008/03/05', '13203768277', 'São Paulo');
+
+insert into paciente
+values(3, 'Manuela', '2009/12/25', '43563899781', 'Milão');
+
+insert into paciente
+values(4, 'Eduardo', '1975/05/31', '66503198721', 'Londrina');
+
+insert into paciente
+values(5, 'Osmarina', '1961/04/10', '12510100000', 'Curitiba');
+
+insert into paciente
+values(6, 'Vilmar', '1958/08/21', '47855499635', 'Santa Terezinha');
+
+describe paciente;
+select * from paciente;
