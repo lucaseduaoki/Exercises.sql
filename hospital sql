@@ -80,3 +80,45 @@ values(6, 'Vilmar', '1958/08/21', '47855499635', 'Santa Terezinha');
 
 describe paciente;
 select * from paciente;
+
+
+
+
+insert into consulta
+values(1, 1, '2021/05/12', '14:00');
+
+insert into consulta
+values(1, 4, '2021/05/13', '10:00');
+
+insert into consulta
+values(2, 1, '2020/10/13', '9:00');
+
+insert into consulta
+values(2, 2, '2021/03/13', '11:00');
+
+insert into consulta
+values(2, 3, '2020/08/14', '14:00');
+
+insert into consulta
+values(2, 4, '2020/08/14', '17:00');
+
+insert into consulta
+values(3, 6, '2020/05/19', '18:00');
+
+insert into consulta
+values(3, 3, '2021/04/12', '10:00');
+
+insert into consulta
+values(5, 4, '2021/04/19', '13:00');
+
+insert into consulta
+values(6, 5, '2021/04/20', '13:00');
+
+insert into consulta
+values(4, 4, '2020/10/22', '19:30');
+
+describe consulta;
+select * from consulta;
+
+
+
